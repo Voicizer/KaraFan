@@ -993,7 +993,7 @@ if __name__ == '__main__':
 		python inference.py
 		--input mixture.wav mixture1.wav
 		--output_format MP3
-		--overlap_MDX 0.25
+		--overlap_MDX 0.8
 		--chunk_size 500000
 		--DEBUG
 	"""
@@ -1011,7 +1011,7 @@ if __name__ == '__main__':
 	m.add_argument('--model_instrum', type=str, help='MDX A.I Instrumental model NAME : Replace "spaces" in model\'s name by underscore "_".', default='Instrum HQ 3')
 	m.add_argument('--model_vocals',  type=str, help='MDX A.I Vocals model NAME : Replace "spaces" in model\'s name by underscore "_".', default='Kim Vocal 2')
 	m.add_argument('--bigshifts_MDX', type=int, help='Managing MDX "BigShifts" trick value.', default=12)
-	m.add_argument('--overlap_MDX', type=float, help='Overlap of splited audio for heavy models. Closer to 1.0 - slower.', default=0.0)
+	m.add_argument('--overlap_MDX', type=float, help='Overlap of splited audio for heavy models. Closer to 1.0 - slower.', default=0.8)
 #	m.add_argument('--overlap_MDXv3', type=int, help='MDXv3 overlap', default=8)
 	m.add_argument('--chunk_size', type=int, help='Chunk size for ONNX models. Set lower to reduce GPU memory consumption OR if you have GPU memory errors !. Default: 500000', default=500000)
 	m.add_argument('--use_SRS', action='store_true', help='Use "SRS" vocal 2nd pass : can be useful for high vocals (Soprano by e.g)', default=False)
